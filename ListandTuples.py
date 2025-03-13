@@ -94,5 +94,5 @@ print(hey)
 #count occurences 
 print(tuple2.count(1))
 
-#index 
+#index of first occurence
 print(tuple2.index(1))
