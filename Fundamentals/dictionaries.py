@@ -1,77 +1,77 @@
-# # #Creating dictionaries
-# band={
-#     "vocals":"Plant",
-#     "guitar":"Page"
-# }
-# band2=dict(vocals="Plant", guitar="Page")
-# # print(band)
-# # print(band2)
-# # print(type(band))
-# # print(len(band))
+# #Creating dictionaries
+band={
+    "vocals":"Plant",
+    "guitar":"Page"
+}
+band2=dict(vocals="Plant", guitar="Page")
+print(band)
+print(band2)
+print(type(band))
+print(len(band))
  
-# # #Accessing items
-# # print(band["vocals"])
-# # print(band.get("guitar"))
+#Accessing items
+print(band["vocals"])
+print(band.get("guitar"))
 
-# # #list all keys and values
-# # print(band.keys())
-# # print(band.values())
+#list all keys and values
+print(band.keys())
+print(band.values())
 
-# # #as tuples
-# # print(band.items())
+#as tuples
+print(band.items())
 
-# #verify key exist
-# print("guitar" in band)
-# print("instu" in band)
+#verify key exist
+print("guitar" in band)
+print("instu" in band)
 
-# #change values
-# band["vocals"]="Coverdale"
-# band.update({"base":"JPG","vocals":"Plants"})
-# print(band)
+#change values
+band["vocals"]="Coverdale"
+band.update({"base":"JPG","vocals":"Plants"})
+print(band)
 
-# #remove items
-# print(band.pop("base"))
-# print(band)
+#remove items
+print(band.pop("base"))
+print(band)
 
-# print(band.popitem()) #removes last item added
-# print(band)
+print(band.popitem()) #removes last item added
+print(band)
 
-# #delete and clear
-# band["drums"]="Bonham"
-# del band["drums"]
-# print(band)
+#delete and clear
+band["drums"]="Bonham"
+del band["drums"]
+print(band)
 
-# band2.clear()
-# print(band2)
-# del band2
-# #copying dicts
+band2.clear()
+print(band2)
+del band2
+#copying dicts
 
-# #wrong way , both var refers saem thing
-# #band2=band 
+#wrong way , both var refers saem thing
+#band2=band 
 
-# #correct way
-# band2=band.copy()
-# print(band)
-# print(band2)
+#correct way
+band2=band.copy()
+print(band)
+print(band2)
 
 
-# #nested dictionaries
-# member1={
-#     "name":"Plant",
-#     "instrument":"vocals"
-# }
-# member2={
-#     "name":"Page",
-#     "instrument":"guitar"
-# }
-# band3={
-#     "mem1":member1,
-#     "mem2":member2
-# }
-# print(band3)
-# print(band3["mem1"]["name"])
+#nested dictionaries
+member1={
+    "name":"Plant",
+    "instrument":"vocals"
+}
+member2={
+    "name":"Page",
+    "instrument":"guitar"
+}
+band3={
+    "mem1":member1,
+    "mem2":member2
+ }
+print(band3)
+print(band3["mem1"]["name"])
 
-#SETS -- no duplicates
+# #SETS -- no duplicates
 nums={
     1,2,3,4
 }
