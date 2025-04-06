@@ -1,44 +1,72 @@
-# print("Hello world!")
-# for i in range(3,10):
-#     print(f"The square of {i} is {i**2}")
-# print("dave" == "gray")
-# print(type("dave" > "gray"))
-# print()
+# -------------------------------
+# Printing and Looping
+# -------------------------------
 
-# x=True
-# y=False 
-# print(not x)
-# print(x and y)
-# print(x or y)
-# print()
+print("Hello world!")
 
-# meaning =42
-# if meaning >10:
-#     print("Yes")
-# else:
-#     print("No")
+for i in range(3, 10):
+    print(f"The square of {i} is {i**2}")
 
-# # data types
+# -------------------------------
+# String Comparison and Boolean Type
+# -------------------------------
 
-# first="Dave"
-# last="Gray"
-# print(type(first))
+print("dave" == "gray")                # False
+print(type("dave" > "gray"))          # <class 'bool'>
 
-# #constructor function
+# -------------------------------
+# Boolean Logic
+# -------------------------------
 
-# pizaa=str("Pep")
-# print(type(pizaa))
-# print(type(pizaa)==str)
-# print(isinstance(pizaa,str))
+x = True
+y = False
 
-#type conversion
-# a=2
-# b=int(2.9)
-# print(a+b)
+print(not x)                          # False
+print(x and y)                        # False
+print(x or y)                         # True
 
-#input
-# name=input("Enter your name: ")
-# print("Hi" + name)
+# -------------------------------
+# If-Else Statement
+# -------------------------------
 
-#Strings
+meaning = 42
 
+if meaning > 10:
+    print("Yes")
+else:
+    print("No")
+
+# -------------------------------
+# Data Types and Type Checking
+# -------------------------------
+
+first = "Dave"
+last = "Gray"
+
+print(type(first))                    # <class 'str'>
+
+# -------------------------------
+# Constructor Function and Type Checking
+# -------------------------------
+
+pizza = str("Pep")
+
+print(type(pizza))                    # <class 'str'>
+print(type(pizza) == str)             # True
+print(isinstance(pizza, str))         # True
+
+# -------------------------------
+# Type Conversion
+# -------------------------------
+
+a = 2
+b = int(2.9)                          # 2 (truncated)
+
+print(a + b)                          # 4
+
+# -------------------------------
+# User Input (Commented Out)
+# -------------------------------
+
+# name = input("Enter your name: ")
+# print("Hi " + name)

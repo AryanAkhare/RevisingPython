@@ -1,32 +1,35 @@
-def hello(name,lang):
-    greetings={
-        "English":"Hello ",
-        "Hindi":"Namaste ",
-        "Spanish":"Ola ",
-        "German":"Hallo "
+import argparse  # For command-line argument parsing
+
+def hello(name, lang):
+    greetings = {
+        "English": "Hello",
+        "Hindi": "Namaste",
+        "Spanish": "Ola",
+        "German": "Hallo"
     }
-    msg=f"{greetings[lang]}{name}"
+    msg = f"{greetings.get(lang, 'Hello')} {name}"
     print(msg)
 
-if __name__=='__main__':
-
-    import argparse #command line library and arguments
-    parser=argparse.ArgumentParser(
-        description="Provides personal greeting."
+def main():
+    parser = argparse.ArgumentParser(
+        description="Provides a personalized greeting."
     )
-
+    
     parser.add_argument(
-        "-n","--name",metavar="name",
-        required=True,help="The name of person to greet."
+        "-n", "--name", metavar="name",
+        required=True,
+        help="The name of the person to greet."
     )
-
+    
     parser.add_argument(
-        "-l","--lang",metavar="language",
-        required=True,choices=["English","Hindi","Spanish","German"],
-        help="The language of greeting."
-
+        "-l", "--lang", metavar="language",
+        required=True,
+        choices=["English", "Hindi", "Spanish", "German"],
+        help="The language to use for the greeting."
     )
-    args=parser.parse_args()
-    hello(args.name,args.lang)
+    
+    args = parser.parse_args()
+    hello(args.name, args.lang)
 
-    #run using python script.py -n Aryan
+if __name__ == "__main__":
+    main()

@@ -1,11 +1,14 @@
-import math 
+import math
 import random
 from enum import Enum
-print(math.pi)
 
-#finding things from module
+# Math module
+print(math.pi)  # Prints value of pi
+
+# List all attributes/methods in random module
 for item in dir(random):
     print(item)
 
-print(__name__)
-print(math.__name__)
+# Special __name__ attribute
+print(__name__)        # Returns "__main__" when run directly
+print(math.__name__)   # Returns module name: "math"

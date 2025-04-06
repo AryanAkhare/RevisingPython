@@ -1,19 +1,22 @@
-str="aryanakhare"
+# ---------------- Basic String Indexing and Properties ---------------- #
+str1 = "aryanakhare"
 
-print(str[0:4])
-print(len(str))
-print(str[-5:-1])
-print(str.endswith("e"))
-print(str.startswith("a"))
-print(str.replace("a","r"))
-print(str.capitalize())
-print(str.find("ak")) #returns index of first occurence
-print(str.count("ar")) #returns total occurence
-str="$$$$$$$$$$$$$"
-print(str.count("$"))
+print(str1[0:4])               # 'arya'
+print(len(str1))               # 11
+print(str1[-5:-1])             # 'khar'
+print(str1.endswith("e"))      # True
+print(str1.startswith("a"))    # True
+print(str1.replace("a", "r"))  # replaces all 'a' with 'r'
+print(str1.capitalize())       # 'Aryanakhare'
+print(str1.find("ak"))         # index of first occurrence: 5
+print(str1.count("ar"))        # 2
 
-#multiple lines
-multiline='''
+# Replace entire string with repeated char and count
+str1 = "$$$$$$$$$$$$$"
+print(str1.count("$"))         # 13
+
+# ---------------- Multi-line and Escape Characters ---------------- #
+multiline = '''
 Hey , hi are you?
 
 I was just checking in.
@@ -21,37 +24,30 @@ I was just checking in.
 '''
 print(multiline)
 
-#escaping special character
-sentence='I am Aryan\'s \t gf '
-print(sentence)
+sentence = 'I am Aryan\'s \t gf '
+print(sentence)  # includes escaped apostrophe and tab
 
-#string methods
-s="Aryanakhare"
-print(s.upper())
-print(s.lower())
-print(len(multiline))
-print(multiline.title()) #propercase first letter capital , rest small
-print(multiline.count(" "))
-multiline+= "Yes good"
+# ---------------- String Methods ---------------- #
+s = "Aryanakhare"
+print(s.upper())        # ALL CAPS
+print(s.lower())        # all lowercase
+print(len(multiline))   # length including whitespace/newlines
+print(multiline.title())# First letter of each word capital
+print(multiline.count(" ")) # count of spaces
+multiline += "Yes good"
 print(multiline)
-print(len(multiline.strip()))
+print(len(multiline.strip())) # removes leading/trailing whitespaces
 
-#Building a menu
-title= "menu".upper()
-print(title.center(20,"="))
-print("Coffee".ljust(16,".") + "Rs.5".rjust(4))
-print("Coffee".ljust(16,".") + "Rs.5".rjust(4))
-print("Coffee".ljust(16,".") + "Rs.5".rjust(4))
-print("Coffee".ljust(16,".") + "Rs.5".rjust(4))
-print("Coffee".ljust(16,".") + "Rs.5".rjust(4))
+# ---------------- Build a Menu with Alignment ---------------- #
+title = "menu".upper()
+print(title.center(20, "="))
+for _ in range(5):
+    print("Coffee".ljust(16, ".") + "Rs.5".rjust(4))
 
-#string index values
-print(s[1])
-print(s[1:])
-print(s[1:-1])
+# ---------------- String Index and Boolean Checks ---------------- #
+print(s[1])          # 'r'
+print(s[1:])         # 'ryanakhare'
+print(s[1:-1])       # 'ryanakhar'
 
-#retuns boolean
-print("aryan".startswith("A"))
-print("aryan".endswith("n"))
-
-
+print("aryan".startswith("A"))  # False (case-sensitive)
+print("aryan".endswith("n"))    # True

@@ -1,3 +1,4 @@
+# ------------------------- Vehicle Class -------------------------
 class Vehicle:
     def __init__(self, make, model):
         self.make = make
@@ -9,30 +10,22 @@ class Vehicle:
     def get_make_model(self):
         print(f"I am a {self.make} {self.model}")
 
-# Class and Objects
+# ------------------------- Class and Objects -------------------------
 print(f"{'-'*10}\nClass and Objects\n")
 
-print("Object1")
 car1 = Vehicle('Tesla', 'Model 3')
-car1.moves()
-car1.get_make_model()
-print(car1.make)
-print(car1.model)
-
-print(f"{'-'*10}")
-
-print("Object2")
 car2 = Vehicle('Hyundai', 'Swift')
-car2.moves()
-car2.get_make_model()
-print(car2.make)
-print(car2.model)
 
-# Inheritance
-print(f"{'-'*10}\nInheritance\n")
+for car in (car1, car2):
+    print(f"\nObject: {car.make}")
+    car.moves()
+    car.get_make_model()
+
+# ------------------------- Inheritance -------------------------
+print(f"\n{'-'*10}\nInheritance\n")
 
 class Airplane(Vehicle):
-    def moves(self):  # Overwritten method
+    def moves(self):
         print('Flies along...')
 
 class Truck(Vehicle):
@@ -44,31 +37,25 @@ class Bike(Vehicle):
         print('Vrooms along...')
 
 class Golfkart(Vehicle):
-    pass  # Uses parent's move() method
+    pass
 
-boeing = Airplane('Boeing', '747')
-leyland = Truck('Ashok', 'Leyland')
-redbull = Bike('Redbull', 'BMX')
-caddy = Golfkart('Caddy', 'Model Vice')
+vehicles = [
+    Airplane('Boeing', '747'),
+    Truck('Ashok', 'Leyland'),
+    Bike('Redbull', 'BMX'),
+    Golfkart('Caddy', 'Model Vice')
+]
 
-boeing.get_make_model()
-boeing.moves()
+for v in vehicles:
+    v.get_make_model()
+    v.moves()
 
-leyland.get_make_model()
-leyland.moves()
-
-redbull.get_make_model()
-redbull.moves()  # Uses its own function
-
-caddy.get_make_model()
-caddy.moves()  # Uses parent function
-
-# Super keyword
-print(f"{'-'*10}\nSuper\n")
+# ------------------------- Super Keyword -------------------------
+print(f"\n{'-'*10}\nSuper\n")
 
 class Car(Vehicle):
     def __init__(self, make, model, date_of_manufacture):
-        super().__init__(make, model)  # Calls parent constructor
+        super().__init__(make, model)
         self.date_of_manufacture = date_of_manufacture
 
     def moves(self):
@@ -80,15 +67,15 @@ class Car(Vehicle):
 ford = Car('Ford', 'Model 2', '1987')
 ford.intro()
 
-# Polymorphism
-print(f"{'-'*10}\nPolymorphism\n")
+# ------------------------- Polymorphism -------------------------
+print(f"\n{'-'*10}\nPolymorphism\n")
 
-for v in (car1, car2, boeing, leyland, redbull, caddy):
+for v in [car1, car2] + vehicles:
     v.get_make_model()
     v.moves()
 
-# Method Overriding
-print(f"{'-'*10}\nMethod Override\n")
+# ------------------------- Method Overriding -------------------------
+print(f"\n{'-'*10}\nMethod Override\n")
 
 class Animal:
     def speak(self):
@@ -104,21 +91,21 @@ class Cat(Animal):
 
 animals = [Dog(), Cat()]
 for animal in animals:
-    print(animal.speak())  # Output: Bark, Meow
+    print(animal.speak())
 
-# Method Overloading (Using Default Arguments)
-print(f"{'-'*10}\nMethod Overloading\n")
+# ------------------------- Method Overloading -------------------------
+print(f"\n{'-'*10}\nMethod Overloading\n")
 
 class Math:
     def add(self, a, b, c=0):
-        return a + b + c  # Works for both two and three arguments
+        return a + b + c
 
-obj = Math()
-print(obj.add(2, 3))      # Output: 5
-print(obj.add(2, 3, 4))   # Output: 9
+calc = Math()
+print(calc.add(2, 3))      # 5
+print(calc.add(2, 3, 4))   # 9
 
-# Abstraction
-print(f"{'-'*10}\nAbstraction\n")
+# ------------------------- Abstraction -------------------------
+print(f"\n{'-'*10}\nAbstraction\n")
 
 from abc import ABC, abstractmethod
 
@@ -132,17 +119,17 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
-        return 3.14 * self.radius * self.radius
+        return 3.14 * self.radius ** 2
 
 class Square(Shape):
     def __init__(self, side):
         self.side = side
 
     def area(self):
-        return pow(self.side, 2)  # Corrected exponentiation
+        return self.side ** 2
 
-c = Circle(5)
-print(c.area())  # Output: 78.5
+circle = Circle(5)
+square = Square(5)
 
-sq = Square(5)
-print(sq.area())  # Output: 25
+print(circle.area())  # 78.5
+print(square.area())  # 25

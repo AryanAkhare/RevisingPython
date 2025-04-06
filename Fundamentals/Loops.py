@@ -1,37 +1,49 @@
-#for loop
-for i in range(0,5):
+# -------------------- FOR LOOP --------------------
+
+# Simple range loop
+for i in range(0, 5):
     print(i)
 
-name=["dave","lisa","john"]
+# Looping through a list
+name = ["dave", "lisa", "john"]
 for x in name:
     print(x)
 
+# Looping through a string
 for x in "Mississippi":
     print(x)
 
+# Break example
 for x in name:
-    if x=="lisa":
+    if x == "lisa":
         break
     print(x)
 
+# Continue example
 for x in name:
-    if x=="lisa":
+    if x == "lisa":
         continue
-    print(x) #SKIPS LISA
+    print(x)  # Skips "lisa"
 
-for i in range(2,4):
+# Range from 2 to 3
+for i in range(2, 4):
     print(i)
 
-for i in range(0,101,5):
+# Multiples of 5 from 0 to 100
+for i in range(0, 101, 5):
     print(i)
-names2=["dave","Sara","john"]
-actions=["codes","eats","sleeps"]
+
+# Nested loop
+names2 = ["dave", "Sara", "john"]
+actions = ["codes", "eats", "sleeps"]
 
 for x in names2:
     for i in actions:
-        print(x+" "+i+".")
-#while loop
-value=1
-while value<10:
+        print(x + " " + i + ".")
+
+# -------------------- WHILE LOOP --------------------
+
+value = 1
+while value < 10:
     print(value)
-    value=value+1
+    value += 1

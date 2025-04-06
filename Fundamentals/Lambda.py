@@ -1,56 +1,55 @@
-squaring = lambda num : num*num
+# ---------- Lambda Functions ----------
+squaring = lambda num: num * num
 print(squaring(5))
 
-addTwo = lambda num: num+2
-print(addTwo(2))
+add_two = lambda num: num + 2
+print(add_two(2))
 
-multwonum=lambda a,b:a*b
-print(multwonum(3,4))
+multiply_two_numbers = lambda a, b: a * b
+print(multiply_two_numbers(3, 4))
 
-###################
+# ---------- Lambda with Closure ----------
 print(f"{'-'*20}")
 def function_builder(x):
-    return lambda num:num+x
+    return lambda num: num + x
 
-addTen=function_builder(10)
-addTwenty= function_builder(20)
+add_ten = function_builder(10)
+add_twenty = function_builder(20)
 
-print(addTen(7))
-print(addTwenty(7))
+print(add_ten(7))
+print(add_twenty(7))
 
-#################### MAP
+# ---------- map() Example ----------
 print(f"{'-'*20}")
-sq=lambda num:num*num
-number=[3,7,12,18,20,21]
-squared_nums=map(sq,number) 
-#map=(function,datacollection)
-print(f"This is list of numbers: {list(number)}")
-print(f"This is list of squared numbers: {list(squared_nums)}")
+square = lambda num: num * num
+numbers_map = [3, 7, 12, 18, 20, 21]
+squared_numbers = map(square, numbers_map)
+print(f"This is list of numbers: {list(numbers_map)}")
+print(f"This is list of squared numbers: {list(squared_numbers)}")
 
-#################### Filter
+# ---------- filter() Example ----------
 print(f"{'-'*20}")
-isOdd=lambda num: num%2 != 0
-numbers=[13,242,24,52,3,412,21,321]
-Odd_nums=map(isOdd,numbers)
-fil_odd=filter(isOdd,numbers)
-print(f"list of numbers: {list(numbers)}")
-print(f"list is number is odd: {list(Odd_nums)}")
-print(f"list filtered with only odd nums:{list(fil_odd)}")
-#######################
+is_odd = lambda num: num % 2 != 0
+numbers_filter = [13, 242, 24, 52, 3, 412, 21, 321]
+odd_numbers_map = map(is_odd, numbers_filter)
+filtered_odd_numbers = filter(is_odd, numbers_filter)
+print(f"List of numbers: {list(numbers_filter)}")
+print(f"List showing which number is odd (True/False): {list(odd_numbers_map)}")
+print(f"List filtered with only odd numbers: {list(filtered_odd_numbers)}")
 
-from functools import reduce #iterable
-print(f"{'-'*20}")
-print("Sum")
-re=lambda acc,curr:acc +curr
-numbers=[1,2,3,4,5,1]
-total=reduce(re,numbers,10) 
-#reduce(func,data,starting_value) here I gave 10 so it gives answer 10+16 as it started from 10
-print(total)
+# ---------- reduce() Examples ----------
+from functools import reduce
 
 print(f"{'-'*20}")
-print("Char count in strings")
-re2=lambda acc,curr:acc +len(curr)
-names=['Davegray','Aryan Akhare','Bohemian Rhapsody','Uptwon']
-char_count=reduce(re2,names,0)
- #starting val optional for numbers not strings
-print(char_count)
+print("Sum using reduce:")
+sum_reduce = lambda acc, curr: acc + curr
+numbers_reduce = [1, 2, 3, 4, 5, 1]
+total_sum = reduce(sum_reduce, numbers_reduce, 10)
+print(total_sum)
+
+print(f"{'-'*20}")
+print("Character count in strings using reduce:")
+char_count_reduce = lambda acc, curr: acc + len(curr)
+name_list = ['Davegray', 'Aryan Akhare', 'Bohemian Rhapsody', 'Uptwon']
+total_chars = reduce(char_count_reduce, name_list, 0)
+print(total_chars)
